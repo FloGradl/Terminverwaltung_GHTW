@@ -1,2 +1,3 @@
 Grau: #556270
-Türkis: #4ecdc4
+TÃ¼rkis: #4ecdc4
+Schriftart: Century Gothic
