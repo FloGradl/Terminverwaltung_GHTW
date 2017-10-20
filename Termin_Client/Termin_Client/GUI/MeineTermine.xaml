@@ -1,0 +1,21 @@
+﻿<Window x:Class="Termin_Client.GUI.MeineTermine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Termin_Client.GUI"
+        mc:Ignorable="d"
+        Title="MeineTermine" Height="381.223" Width="731.005">
+    <Grid Background="#556270">
+        <Label Content="Meine Termine" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Height="35" Width="215" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontSize="18" Foreground="White"/>
+        <Calendar HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="173" Width="175"/>
+        <ListView HorizontalAlignment="Left" Height="257" Margin="209,71,0,0" VerticalAlignment="Top" Width="491">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Background="Transparent" BorderThickness="2" Foreground="White" Content="Termin hinzufügen" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="175" Height="25" FontFamily="Century Gothic" AutomationProperties.Name="btnAddTermin" Click="btnAddTermin" BorderBrush="White"/>
+    </Grid>
+</Window>
