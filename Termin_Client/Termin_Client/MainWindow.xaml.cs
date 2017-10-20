@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Termin_Client.GUI;
 
 namespace Termin_Client
 {
@@ -23,6 +24,13 @@ namespace Termin_Client
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_Login(object sender, RoutedEventArgs e)
+        {
+            Startseite sp = new Startseite();
+            sp.Show();
+            this.Close();
         }
     }
 }
