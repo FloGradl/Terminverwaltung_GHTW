@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Termin_Client.GUI;
 
 namespace Termin_Client
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für Mitarbeiter.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Mitarbeiter : Window
     {
-        public MainWindow()
+        public Mitarbeiter()
         {
             InitializeComponent();
-        }
-
-        private void btn_Login(object sender, RoutedEventArgs e)
-        {
-            Startseite sp = new Startseite();
-            sp.Show();
-            this.Close();
         }
     }
 }

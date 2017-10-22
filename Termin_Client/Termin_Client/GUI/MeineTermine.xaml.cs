@@ -10,27 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Termin_Client.GUI;
 
-namespace Termin_Client
+namespace Termin_Client.GUI
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für MeineTermine.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MeineTermine : Window
     {
-        public MainWindow()
+        public MeineTermine()
         {
             InitializeComponent();
         }
 
-        private void btn_Login(object sender, RoutedEventArgs e)
+        private void btnAddTermin(object sender, RoutedEventArgs e)
         {
-            Startseite sp = new Startseite();
-            sp.Show();
-            this.Close();
+            GUI.PopUpAddTermin addTermin = new GUI.PopUpAddTermin();
+            addTermin.Show();
         }
     }
 }
