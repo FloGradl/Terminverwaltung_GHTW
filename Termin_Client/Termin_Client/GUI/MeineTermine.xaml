@@ -15,7 +15,7 @@
                     <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Date}"/>
                     <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Place}"/>
                     <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Topic}"/>
-                    <GridViewColumn Width="150" Header="Beschreibung" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Width="170" Header="Beschreibung" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
         </ListView>
