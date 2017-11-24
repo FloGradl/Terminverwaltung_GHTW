@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Termin_Client.Data;
 
 namespace Termin_Client.GUI
 {
@@ -19,9 +20,11 @@ namespace Termin_Client.GUI
     /// </summary>
     public partial class MeineTermine : Window
     {
+        Database db = Database.newInstance();
         public MeineTermine()
         {
             InitializeComponent();
+            DataContext = db;
         }
 
         private void btnAddTermin(object sender, RoutedEventArgs e)
