@@ -76,8 +76,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\Database.cs" />
-    <Compile Include="Data\Termin.cs" />
     <Compile Include="GUI\MeineTermine.xaml.cs">
       <DependentUpon>MeineTermine.xaml</DependentUpon>
     </Compile>
