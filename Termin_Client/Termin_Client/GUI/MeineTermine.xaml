@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Termin_Client.GUI"
         mc:Ignorable="d"
-        Title="MeineTermine" Height="381.223" Width="731.005">
+        Title="MeineTermine" Height="381.223" Width="731.005" >
     <Grid Background="#556270">
         <Label Content="Meine Termine" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Height="35" Width="215" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontSize="18" Foreground="White"/>
         <Calendar HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="173" Width="175"/>
-        <ListView HorizontalAlignment="Left" Height="257" Margin="209,71,0,0" VerticalAlignment="Top" Width="491">
+        <ListView HorizontalAlignment="Left" ItemsSource="{Binding TerminList}"  Height="257" Margin="209,71,0,0" VerticalAlignment="Top" Width="491">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Place}"/>
+                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Topic}"/>
+                    <GridViewColumn Width="170" Header="Beschreibung" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
         </ListView>

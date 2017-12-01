@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Termin_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="318.5" Width="388.5"
         ResizeMode="NoResize"  
-        WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid>
-        <Label Content="User:" HorizontalAlignment="Left" Margin="167,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.494"/>
-        <Label Content="Passwort:" HorizontalAlignment="Left" Margin="167,125,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtUser" HorizontalAlignment="Left"  Height="23" Margin="243,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Name="pwPasswort" PasswordChar="*" Width="120" Height="23"  HorizontalAlignment="Left" Margin="243,127,0,0" VerticalAlignment="Top"/>
-        <Button Click="btn_Login" Content="Login" HorizontalAlignment="Left" Margin="224,172,0,0" VerticalAlignment="Top" Width="75"/>
-
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#556270">
+        <Label Content="Name:" Foreground="White" HorizontalAlignment="Left" Margin="83,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.494"/>
+        <Label Content="Passwort:" Foreground="White" HorizontalAlignment="Left" Margin="83,154,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtUser" HorizontalAlignment="Left"  Height="19" Margin="147,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Name="pwPasswort" PasswordChar="*" Width="120" Height="19"  HorizontalAlignment="Left" Margin="147,158,0,0" VerticalAlignment="Top"/>
+        <Button FontFamily="Century Gothic" Click="btn_Login" Content="Login" HorizontalAlignment="Left" Margin="147,197,0,0" VerticalAlignment="Top" Width="74" IsDefault="True" Foreground="White" Background="Transparent" BorderBrush="White"/>
+        <Image HorizontalAlignment="Left" Height="74" Margin="147,15,0,0" VerticalAlignment="Top" Width="164" Source="Images/service-icon-calendar (1).png" OpacityMask="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
     </Grid>
 </Window>

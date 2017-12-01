@@ -23,5 +23,16 @@ namespace Termin_Client.GUI
         {
             InitializeComponent();
         }
+
+        private void mnItmTermin(object sender, RoutedEventArgs e)
+        {
+            GUI.MeineTermine mt = new MeineTermine();
+            mt.Show();
+        }
+
+        private void mnItmLogout(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

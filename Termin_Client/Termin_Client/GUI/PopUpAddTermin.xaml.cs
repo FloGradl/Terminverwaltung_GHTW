@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Termin_Client.Data;
 
 namespace Termin_Client.GUI
 {
@@ -22,6 +23,13 @@ namespace Termin_Client.GUI
         public PopUpAddTermin()
         {
             InitializeComponent();
+        }
+
+        private void btnAddTermin(object sender, RoutedEventArgs e)
+        {
+            Database db = Database.newInstance();
+            DateTime? date = datepickerP.SelectedDate;
+            db.addTermin(new Termine(Convert.ToDateTime(date.Value.ToShortDateString()), txtboxOrt.Text, txtboxInfo.Text, "--"));
         }
     }
 }

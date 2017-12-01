@@ -35,14 +35,18 @@
                             <Image Source="../Images/group.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Termine">
+                    <MenuItem Header="Termine" Click="mnItmTermin">
                         <MenuItem.Icon>
                             <Image Source="../Images/termin.png" />
+                        </MenuItem.Icon>
+                    </MenuItem> 
+                    <MenuItem Header="Logout" Click="mnItmLogout">
+                        <MenuItem.Icon>
+                            <Image Source="../Images/logout.png" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>
-
     </Grid>
 </Window>

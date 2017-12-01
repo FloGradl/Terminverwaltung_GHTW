@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Termine.cs" />
     <Page Include="GUI\MeineTermine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\termin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\service-icon-calendar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
