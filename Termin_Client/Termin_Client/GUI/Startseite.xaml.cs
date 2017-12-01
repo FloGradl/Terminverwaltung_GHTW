@@ -22,6 +22,13 @@ namespace Termin_Client.GUI
         public Startseite()
         {
             InitializeComponent();
+            Karte.Navigate("https://www.google.at/maps/@47.4353345,13.6432712,8z/data=!4m2!11m1!3e4c");
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            GUI.MeineTermine openTermin = new GUI.MeineTermine();
+            openTermin.Show();
         }
 
         private void mnItmTermin(object sender, RoutedEventArgs e)

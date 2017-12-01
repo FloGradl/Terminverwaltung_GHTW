@@ -48,5 +48,8 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
+        <Grid>
+            <WebBrowser Name="Karte" HorizontalAlignment="Stretch" Height="400" Margin="10,255,0,0" VerticalAlignment="Bottom"/>
+        </Grid>
     </Grid>
 </Window>

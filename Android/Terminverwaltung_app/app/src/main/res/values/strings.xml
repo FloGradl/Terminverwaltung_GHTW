@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Terminverwaltung_app</string>
+    <string name="app_name">Terminverwaltung GHTW</string>
+    <string name="title_activity_login">Login</string>
+    <string name="button_login_login_activity">Login</string>
+    <string name="text_username_login_activity">username</string>
+    <string name="text_password_login_activity">sample password</string>
+    <string name="button_add_meeting_activity">Add</string>
+    <string name="menu_meeting_activity">Settings</string>
 </resources>
