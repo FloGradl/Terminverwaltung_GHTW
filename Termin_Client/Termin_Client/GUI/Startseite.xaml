@@ -8,11 +8,14 @@
         Title="Startseite" 
         ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Background="#556270">
+        Background="#556270" Height="2135.567" Width="2556.421">
     <Grid>
-        <DockPanel Background="LightGray" HorizontalAlignment="Stretch" Height="67" LastChildFill="False" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto">
-            <Label Content="Willkommen " Height="67.3333333333333" VerticalAlignment="Top"/>
-            <Label Name="lblUser" Content="" Height="67.3333333333333" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="599*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Background="LightGray" HorizontalAlignment="Stretch" Height="67" LastChildFill="False" Margin="10,10,0.334,0" VerticalAlignment="Top" Width="auto" Grid.ColumnSpan="2">
+            <Label Name ="lblWillkommen" Content="Willkommen " Height="67" VerticalAlignment="Top" Width="236"/>
             <Menu DockPanel.Dock="Right" Height="47" VerticalAlignment="Top" Width="47" Margin="20,20,20,0" Background="LightGray">
                 <MenuItem>
                     <MenuItem.Header>
@@ -39,7 +42,7 @@
                         <MenuItem.Icon>
                             <Image Source="../Images/termin.png" />
                         </MenuItem.Icon>
-                    </MenuItem> 
+                    </MenuItem>
                     <MenuItem Header="Logout" Click="mnItmLogout">
                         <MenuItem.Icon>
                             <Image Source="../Images/logout.png" />
@@ -48,8 +51,10 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Grid>
+        <Grid Grid.ColumnSpan="2" Margin="0,0,0.334,0.333">
             <WebBrowser Name="Karte" HorizontalAlignment="Stretch" Height="400" Margin="10,255,0,0" VerticalAlignment="Bottom"/>
+            <Label Content="Ihr nächster Termin:" HorizontalAlignment="Left" Margin="142,154,0,0" VerticalAlignment="Top"/>
+            <Label Name="lblTermin" Content="" HorizontalAlignment="Left" Margin="142,185,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 </Window>

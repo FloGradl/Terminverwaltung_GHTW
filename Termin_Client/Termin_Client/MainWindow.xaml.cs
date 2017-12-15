@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Termin_Client.Data;
 using Termin_Client.GUI;
 
 namespace Termin_Client
@@ -52,6 +53,7 @@ namespace Termin_Client
         private void btn_Login(object sender, RoutedEventArgs e)
         {
             Boolean found = false;
+            Database db = Database.newInstance();
             string benutzerName = null;
             string passwort = null;
             string checkLogin = "select bname, passwort from benutzer";
@@ -77,6 +79,7 @@ namespace Termin_Client
                         {
                             if (passwort == pwPasswort.Password.ToString())
                             {
+                                db.setUsername(benutzerName);
                                 Startseite sp = new Startseite();
                                 sp.Show();
                                 this.Close();

@@ -20,5 +20,10 @@ namespace Termin_Client
             this.Topic = topic;
             this.Description = description;
         }
+
+        public override string ToString()
+        {
+            return Date + " " + Place + " " + Topic + " " + Description;
+        }
     }
 }

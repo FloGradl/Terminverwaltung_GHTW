@@ -54,8 +54,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Car.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Termine.cs" />
+    <Page Include="GUI\Cars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI\MeineTermine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +80,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\Cars.xaml.cs">
+      <DependentUpon>Cars.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI\MeineTermine.xaml.cs">
       <DependentUpon>MeineTermine.xaml</DependentUpon>

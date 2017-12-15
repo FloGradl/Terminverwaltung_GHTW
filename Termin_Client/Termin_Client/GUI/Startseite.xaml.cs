@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Termin_Client.Data;
 
 namespace Termin_Client.GUI
 {
@@ -19,10 +20,13 @@ namespace Termin_Client.GUI
     /// </summary>
     public partial class Startseite : Window
     {
+        Database db = Database.newInstance();
         public Startseite()
         {
             InitializeComponent();
             Karte.Navigate("https://www.google.at/maps/@47.4353345,13.6432712,8z/data=!4m2!11m1!3e4c");
+            lblWillkommen.Content += db.getUsername();
+            lblTermin.Content = db.getCurrentAppointment();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
