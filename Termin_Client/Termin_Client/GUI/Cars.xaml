@@ -8,7 +8,7 @@
         Title="Cars" Height="559.2" Width="637.92">
     <Grid Background="#556270">
         <Label Content="Auto buchen" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" Height="35" Width="215" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontSize="18" Foreground="White"/>
-        <ListView HorizontalAlignment="Left" ItemsSource="{Binding TerminList}"  Height="169" Margin="10,77,0,0" VerticalAlignment="Top" Width="611">
+        <ListView HorizontalAlignment="Left" ItemsSource="{Binding TerminList}" SelectionChanged="ListView_SelectionChanged" Height="169" Margin="10,77,0,0" VerticalAlignment="Top" Width="611">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Date}"/>
@@ -22,9 +22,9 @@
         <ListView HorizontalAlignment="Left" ItemsSource="{Binding CarList}" Height="236" Margin="10,284,0,0" VerticalAlignment="Top" Width="352">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Numberplate}"/>
-                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Description}"/>
-                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Position}"/>
+                    <GridViewColumn Width="60" Header="Nummertafel" DisplayMemberBinding="{Binding Numberplate}"/>
+                    <GridViewColumn Width="140" Header="Auto" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Width="100" Header="Standpunkt" DisplayMemberBinding="{Binding Position}"/>
                 </GridView>
             </ListView.View>
         </ListView>

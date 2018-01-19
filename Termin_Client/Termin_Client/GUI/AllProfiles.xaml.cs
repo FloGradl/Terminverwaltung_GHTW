@@ -11,25 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Termin_Client.Data;
 
 namespace Termin_Client.GUI
 {
     /// <summary>
-    /// Interaktionslogik für Cars.xaml
+    /// Interaktionslogik für AllProfiles.xaml
     /// </summary>
-    public partial class Cars : Window
+    public partial class AllProfiles : Window
     {
-        Database db = Database.newInstance();
-        public Cars()
+        public AllProfiles()
         {
             InitializeComponent();
-            DataContext = db;
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e) //wenn Termin geklickt wird, werden frei autos in der unteren Liste angezeigt
-        {
-
         }
     }
 }

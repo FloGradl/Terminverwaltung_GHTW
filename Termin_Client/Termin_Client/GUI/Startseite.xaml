@@ -23,12 +23,12 @@
                             <Image Width="20" Height="20" Source="../Images/menu_image.png" />
                         </StackPanel>
                     </MenuItem.Header>
-                    <MenuItem Header="_Autos">
+                    <MenuItem Header="_Autos" Click="mnItmCars">
                         <MenuItem.Icon>
                             <Image Source="../Images/auto.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="_Mitarbeiter">
+                    <MenuItem Header="_Mitarbeiter" Click="MenuItem_Click_1">
                         <MenuItem.Icon>
                             <Image Source="../Images/worker.png" />
                         </MenuItem.Icon>

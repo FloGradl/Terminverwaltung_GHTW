@@ -45,5 +45,17 @@ namespace Termin_Client.GUI
         {
             throw new NotImplementedException();
         }
+
+        private void mnItmCars(object sender, RoutedEventArgs e)
+        {
+            GUI.Cars guic = new Cars();
+            guic.Show();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            GUI.ProfileUser pu = new ProfileUser();
+            pu.Show();
+        }
     }
 }

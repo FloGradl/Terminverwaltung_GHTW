@@ -57,6 +57,10 @@
     <Compile Include="Data\Car.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Termine.cs" />
+    <Page Include="GUI\AllProfiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI\Cars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI\PopUpAddTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\ProfileUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,6 +89,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GUI\AllProfiles.xaml.cs">
+      <DependentUpon>AllProfiles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Cars.xaml.cs">
       <DependentUpon>Cars.xaml</DependentUpon>
     </Compile>
@@ -89,6 +100,9 @@
     </Compile>
     <Compile Include="GUI\PopUpAddTermin.xaml.cs">
       <DependentUpon>PopUpAddTermin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProfileUser.xaml.cs">
+      <DependentUpon>ProfileUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI\Startseite.xaml.cs">
       <DependentUpon>Startseite.xaml</DependentUpon>
@@ -144,6 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\uploadPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\defaultUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

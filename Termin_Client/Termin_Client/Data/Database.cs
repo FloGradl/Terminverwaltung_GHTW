@@ -21,6 +21,8 @@ namespace Termin_Client.Data
         public ObservableCollection<Car> _CarList = new ObservableCollection<Car>();
         public ObservableCollection<Car> CarList { get { return _CarList; } }
 
+        public List<Car> freeCarsList;
+
         private static Database instance = null;
         private String username;
 
@@ -56,6 +58,11 @@ namespace Termin_Client.Data
         public String getCurrentAppointment()
         {
             return "not developed yet";
+        }
+        
+        public List<Car> getFreeCars()
+        {
+            return freeCarsList;
         }
 
         public ObservableCollection<Car> loadCars()
