@@ -21,6 +21,45 @@ namespace Termin_Client.Data
         public ObservableCollection<Car> _CarList = new ObservableCollection<Car>();
         public ObservableCollection<Car> CarList { get { return _CarList; } }
 
+        public ObservableCollection<Worker> _WorkerList = new ObservableCollection<Worker>();
+        public ObservableCollection<Worker> WorkerList { get { return _WorkerList; } }
+
+        public ObservableCollection<Worker> _GroupList = new ObservableCollection<Worker>();
+        public ObservableCollection<Worker> GroupList { get { return _WorkerList; } }
+
+        internal ObservableCollection<Worker> getAllWorkers()
+        {
+            string command = "Select bname, email, telnr From Benutzer";
+            using (OleDbConnection conn = new OleDbConnection(cs))
+            {
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                cmd = new OleDbCommand(command, conn);
+                OleDbDataReader reader = cmd.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        Worker w = new Worker(reader[0].ToString(), reader[1].ToString(), reader[2].ToString());
+                        if (!_WorkerList.Contains(w))
+                            _WorkerList.Add(w);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                reader.Close();
+            }
+            return _WorkerList;
+        }
+
         public List<Car> freeCarsList;
 
         private static Database instance = null;

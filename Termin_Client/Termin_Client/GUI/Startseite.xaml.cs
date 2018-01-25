@@ -57,5 +57,11 @@ namespace Termin_Client.GUI
             GUI.ProfileUser pu = new ProfileUser();
             pu.Show();
         }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e) //Gruppen MenuItem
+        {
+            GUI.GroupGUI gg = new GroupGUI();
+            gg.Show();
+        }
     }
 }

@@ -11,6 +11,22 @@
         <Button Name="UploadPic" Click="UploadPic_Click" Background="#556270" BorderThickness="0" Margin="79,193,539.333,217.667">
             <Image Source="../Images/uploadPhoto.png"/>
         </Button>
+        <Label Content="Vorname:" HorizontalAlignment="Left" Margin="210,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nachname:" HorizontalAlignment="Left" Margin="210,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="e-Mail:" HorizontalAlignment="Left" Margin="210,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="PLZ:" HorizontalAlignment="Left" Margin="210,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ort:" HorizontalAlignment="Left" Margin="210,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="Straße:" HorizontalAlignment="Left" Margin="210,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefonnummer:" HorizontalAlignment="Left" Margin="210,196,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TelNr" HorizontalAlignment="Left" Height="23" Margin="346,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Straße" HorizontalAlignment="Left" Height="23" Margin="346,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Ort" HorizontalAlignment="Left" Height="23" Margin="346,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Plz" HorizontalAlignment="Left" Height="23" Margin="346,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="email" HorizontalAlignment="Left" Height="23" Margin="346,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Nachname" HorizontalAlignment="Left" Height="23" Margin="346,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Vorname" HorizontalAlignment="Left" Height="23" Margin="346,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Speichern" HorizontalAlignment="Left" Margin="249,247,0,0" VerticalAlignment="Top" Width="75" Click="SaveUserSettings"/>
+        <Button Content="Passwort ändern" HorizontalAlignment="Left" Margin="346,247,0,0" VerticalAlignment="Top" Width="100" Click="ChangePassword"/>
 
     </Grid>
 </Window>
