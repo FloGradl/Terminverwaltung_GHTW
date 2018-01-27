@@ -5,13 +5,15 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Termin_Client.Data
 {
     class Database
     {
         //Oracle wird durch Webservice ersetzt
-        string cs = "Provider=OraOLEDB.Oracle;Data Source=192.168.128.152/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
+        //externe ip 212.152.179.117
+        string cs = "Provider=OraOLEDB.Oracle;Data Source=212.152.179.117/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
         OleDbCommand cmd = null;
         //Oracle
 
@@ -25,7 +27,7 @@ namespace Termin_Client.Data
         public ObservableCollection<Worker> WorkerList { get { return _WorkerList; } }
 
         public ObservableCollection<Worker> _GroupList = new ObservableCollection<Worker>();
-        public ObservableCollection<Worker> GroupList { get { return _WorkerList; } }
+        public ObservableCollection<Worker> GroupList { get { return _GroupList; } }
 
         internal ObservableCollection<Worker> getAllWorkers()
         {
@@ -59,6 +61,12 @@ namespace Termin_Client.Data
             }
             return _WorkerList;
         }
+
+        internal void addMemberToGroup(Worker w)
+        {
+            _GroupList.Add(w);
+        }
+    
 
         public List<Car> freeCarsList;
 

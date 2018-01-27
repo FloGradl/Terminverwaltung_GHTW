@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,16 @@ namespace Termin_Client
             this.Place = place;
             this.Topic = topic;
             this.Description = description;
+        }
+
+        public Termine(string json)
+        {
+            JObject jObject = JObject.Parse(json);
+            JToken jTermin = jObject["Termin"];
+            Date = Convert.ToDateTime((string)jTermin["Date"]);
+            Place = (string)jTermin["location"];
+            Topic = (string)jTermin["theme"];
+            Description = (string)jTermin["description"];
         }
 
         public override string ToString()
