@@ -60,6 +60,9 @@ namespace Termin_Client.Data
     public static class Serialize
     {
         public static string ToJson(this List<Worker> self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this List<Car> self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this List<Termine> self) => JsonConvert.SerializeObject(self, Converter.Settings);
+
     }
 
     public class Converter

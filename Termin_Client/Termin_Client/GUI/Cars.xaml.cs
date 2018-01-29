@@ -24,6 +24,8 @@ namespace Termin_Client.GUI
         public Cars()
         {
             InitializeComponent();
+            db.getAllCars();
+            db.getAllTermine();
             DataContext = db;
         }
 

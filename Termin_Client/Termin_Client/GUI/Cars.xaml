@@ -12,8 +12,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Date}"/>
-                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Place}"/>
-                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Topic}"/>
+                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Location}"/>
+                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Theme}"/>
                     <GridViewColumn Width="170" Header="Beschreibung" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
@@ -22,9 +22,9 @@
         <ListView HorizontalAlignment="Left" ItemsSource="{Binding CarList}" Height="236" Margin="10,284,0,0" VerticalAlignment="Top" Width="352">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="60" Header="Nummertafel" DisplayMemberBinding="{Binding Numberplate}"/>
-                    <GridViewColumn Width="140" Header="Auto" DisplayMemberBinding="{Binding Description}"/>
-                    <GridViewColumn Width="100" Header="Standpunkt" DisplayMemberBinding="{Binding Position}"/>
+                    <GridViewColumn Width="100" Header="Nummertafel" DisplayMemberBinding="{Binding LicensePlate}"/>
+                    <GridViewColumn Width="260" Header="Auto" DisplayMemberBinding="{Binding Description}"/>
+                    <!--<GridViewColumn Width="100" Header="Standpunkt" DisplayMemberBinding="{Binding Position}"/>-->
                 </GridView>
             </ListView.View>
         </ListView>

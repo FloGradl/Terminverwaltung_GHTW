@@ -13,9 +13,9 @@
                   dd:DragDrop.IsDragSource="True" dd:DragDrop.IsDropTarget="True" Height="425" Margin="44,104,0,0" VerticalAlignment="Top" Width="477">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding bname}"/>
-                    <GridViewColumn Width="140" Header="Email" DisplayMemberBinding="{Binding email}"/>
-                    <GridViewColumn Width="100" Header="Telefonnummer" DisplayMemberBinding="{Binding telnr}"/>
+                    <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="140" Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Width="100" Header="Telefonnummer" DisplayMemberBinding="{Binding Telnr}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -23,9 +23,9 @@
                   dd:DragDrop.IsDragSource="True" dd:DragDrop.IsDropTarget="True" Margin="587,104,0,0" VerticalAlignment="Top" Width="501">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding bname}"/>
-                    <GridViewColumn Width="140" Header="Email" DisplayMemberBinding="{Binding email}"/>
-                    <GridViewColumn Width="100" Header="Telefonnummer" DisplayMemberBinding="{Binding telnr}"/>
+                    <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="140" Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Width="100" Header="Telefonnummer" DisplayMemberBinding="{Binding Telnr}"/>
                 </GridView>
             </ListView.View>
         </ListView>

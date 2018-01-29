@@ -57,6 +57,7 @@ namespace Termin_Client.GUI
         {
             InitializeComponent();
             //workerList = db.WorkerList;
+            db.getAllWorkers();
             DataContext = db;
 
              

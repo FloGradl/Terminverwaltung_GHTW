@@ -39,7 +39,7 @@ namespace Termin_Client.Data
         private static readonly HttpClient client = new HttpClient();
         // GETs results of the webservice
 
-        private string GETBenutzerList(string myPath)
+        private string GETFromWebserver(string myPath)
         {
             string responseText;
             var encoding = ASCIIEncoding.ASCII;
@@ -63,13 +63,31 @@ namespace Termin_Client.Data
         }
 
 
-        internal ObservableCollection<Worker> getAllWorkers()
+        internal void getAllWorkers()
         {
-            string json = GETBenutzerList("BenutzerList");
+            string json = GETFromWebserver("BenutzerList");
             var data = Worker.FromJson(json);
             foreach (Worker w in data)
                 _WorkerList.Add(w);
-            return _WorkerList;
+            //return _WorkerList;
+        }
+
+        internal void getAllCars()
+        {
+            string json = GETFromWebserver("FahrzeugeList");
+            var data = Car.FromJson(json);
+            foreach (Car c in data)
+                _CarList.Add(c);
+            //return _WorkerList;
+        }
+
+        internal void getAllTermine()
+        {
+            string json = GETFromWebserver("TerminList");
+            var data = Termine.FromJson(json);
+            foreach (Termine t in data)
+                _TerminList.Add(t);
+            //return _WorkerList;
         }
 
         internal void addMemberToGroup(Worker w)

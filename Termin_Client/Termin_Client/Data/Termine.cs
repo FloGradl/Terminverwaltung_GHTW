@@ -1,40 +1,85 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// To parse this JSON data, add NuGet 'Newtonsoft.Json' then do:
+//
+//    using Termin_Client.Data;
+//
+//    var data = Termine.FromJson(jsonString);
 
-namespace Termin_Client
+namespace Termin_Client.Data
 {
-    class Termine
+    using System;
+    using System.Net;
+    using System.Collections.Generic;
+
+    using Newtonsoft.Json;
+
+    public partial class Termine
     {
-        public DateTime Date { get; set; }
-        public string Place { get; set; }
-        public string Topic { get; set; }
+        [JsonProperty("id")]
+        public long Id { get; set; }
+
+        [JsonProperty("date")]
+        public Date Date { get; set; }
+
+        [JsonProperty("location")]
+        public string Location { get; set; }
+
+        [JsonProperty("theme")]
+        public string Theme { get; set; }
+
+        [JsonProperty("description")]
         public string Description { get; set; }
 
-        public Termine(DateTime date, string place, string topic, string description)
-        {
-            this.Date = date;
-            this.Place = place;
-            this.Topic = topic;
-            this.Description = description;
-        }
+        [JsonProperty("usersParticipating")]
+        public List<UsersParticipating> UsersParticipating { get; set; }
+    }
 
-        public Termine(string json)
-        {
-            JObject jObject = JObject.Parse(json);
-            JToken jTermin = jObject["Termin"];
-            Date = Convert.ToDateTime((string)jTermin["Date"]);
-            Place = (string)jTermin["location"];
-            Topic = (string)jTermin["theme"];
-            Description = (string)jTermin["description"];
-        }
+    public partial class Date
+    {
+        [JsonProperty("year")]
+        public long Year { get; set; }
 
-        public override string ToString()
-        {
-            return Date + " " + Place + " " + Topic + " " + Description;
-        }
+        [JsonProperty("month")]
+        public long Month { get; set; }
+
+        [JsonProperty("day")]
+        public long Day { get; set; }
+    }
+
+    public partial class UsersParticipating
+    {
+        [JsonProperty("id")]
+        public long Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
+        [JsonProperty("password")]
+        public string Password { get; set; }
+
+        [JsonProperty("telnr")]
+        public string Telnr { get; set; }
+
+        [JsonProperty("plz")]
+        public long Plz { get; set; }
+
+        [JsonProperty("location")]
+        public string Location { get; set; }
+
+        [JsonProperty("street")]
+        public string Street { get; set; }
+
+        [JsonProperty("isSuperAdmin")]
+        public bool IsSuperAdmin { get; set; }
+
+        [JsonProperty("isGroupAdmin")]
+        public bool IsGroupAdmin { get; set; }
+    }
+
+    public partial class Termine
+    {
+        public static List<Termine> FromJson(string json) => JsonConvert.DeserializeObject<List<Termine>>(json, Converter.Settings);
     }
 }
