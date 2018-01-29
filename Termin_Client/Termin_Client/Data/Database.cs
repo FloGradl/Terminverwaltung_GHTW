@@ -1,11 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.OleDb;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Web.Script;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace Termin_Client.Data
 {
@@ -29,36 +35,40 @@ namespace Termin_Client.Data
         public ObservableCollection<Worker> _GroupList = new ObservableCollection<Worker>();
         public ObservableCollection<Worker> GroupList { get { return _GroupList; } }
 
+        private string urlWebService = "http://10.0.0.35:8080/Terminverwaltung_Server/webresources/";     //schule: 192.168.195.61  daheim: 10.0.0.19
+        private static readonly HttpClient client = new HttpClient();
+        // GETs results of the webservice
+
+        private string GETBenutzerList(string myPath)
+        {
+            string responseText;
+            var encoding = ASCIIEncoding.ASCII;
+            try
+            {
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(new Uri(urlWebService + myPath));       //Create a HttpWebRequest object  
+                httpWebRequest.Method = "GET";      //Set the Method  
+                //httpWebRequest.KeepAlive = true;        //Set Keep Alive
+                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();        //Get the Response 
+                // reads every byte of the response message
+                using (var reader = new System.IO.StreamReader(httpWebResponse.GetResponseStream(), encoding))
+                {
+                    responseText = reader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in GETWebService: " + ex.Message);
+            }
+            return responseText;
+        }
+
+
         internal ObservableCollection<Worker> getAllWorkers()
         {
-            string command = "Select bname, email, telnr From Benutzer";
-            using (OleDbConnection conn = new OleDbConnection(cs))
-            {
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                cmd = new OleDbCommand(command, conn);
-                OleDbDataReader reader = cmd.ExecuteReader();
-                try
-                {
-                    while (reader.Read())
-                    {
-                        Worker w = new Worker(reader[0].ToString(), reader[1].ToString(), reader[2].ToString());
-                        if (!_WorkerList.Contains(w))
-                            _WorkerList.Add(w);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                reader.Close();
-            }
+            string json = GETBenutzerList("BenutzerList");
+            var data = Worker.FromJson(json);
+            foreach (Worker w in data)
+                _WorkerList.Add(w);
             return _WorkerList;
         }
 

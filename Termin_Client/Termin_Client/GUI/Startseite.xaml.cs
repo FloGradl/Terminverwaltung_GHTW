@@ -43,7 +43,7 @@ namespace Termin_Client.GUI
 
         private void mnItmLogout(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            this.Close();
         }
 
         private void mnItmCars(object sender, RoutedEventArgs e)

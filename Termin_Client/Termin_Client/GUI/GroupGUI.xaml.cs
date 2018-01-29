@@ -56,7 +56,7 @@ namespace Termin_Client.GUI
         public GroupGUI()
         {
             InitializeComponent();
-            workerList = db.getAllWorkers();
+            //workerList = db.WorkerList;
             DataContext = db;
 
              
@@ -72,7 +72,7 @@ namespace Termin_Client.GUI
             }
             foreach (var item in newGroup.Items.OfType<Worker>())
             {
-                db.addMemberToGroup(new Worker(item.bname, item.email, item.telnr));
+                db.addMemberToGroup(new Worker(item.Name, item.Email, item.Telnr));
             }
         }
     }
