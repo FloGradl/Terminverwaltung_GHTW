@@ -43,6 +43,11 @@ namespace Termin_Client.Data
 
         [JsonProperty("day")]
         public long Day { get; set; }
+
+        public override string ToString()
+        {
+            return Day + "." + Month + "." + Year;
+        }
     }
 
     public partial class UsersParticipating

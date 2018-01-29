@@ -13,8 +13,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="60" Header="Datum" DisplayMemberBinding="{Binding Date}"/>
-                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Place}"/>
-                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Topic}"/>
+                    <GridViewColumn Width="140" Header="Ort" DisplayMemberBinding="{Binding Location}"/>
+                    <GridViewColumn Width="100" Header="Thema" DisplayMemberBinding="{Binding Theme}"/>
                     <GridViewColumn Width="170" Header="Beschreibung" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
