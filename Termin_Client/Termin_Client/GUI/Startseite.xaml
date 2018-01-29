@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Termin_Client.GUI"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
         Title="Startseite" 
         ResizeMode="NoResize"  
@@ -52,7 +53,7 @@
             </Menu>
         </DockPanel>
         <Grid Grid.ColumnSpan="2" Margin="0,0,0.334,0.333">
-            <WebBrowser Name="Karte" HorizontalAlignment="Stretch" Height="400" Margin="10,255,0,0" VerticalAlignment="Bottom"/>
+            <cefSharp:ChromiumWebBrowser HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="450" Address="https://www.google.at/maps/@47.4353345,13.6432712,8z/data=!4m2!11m1!3e4c" />
             <Label Content="Ihr nächster Termin:" HorizontalAlignment="Left" Margin="142,154,0,0" VerticalAlignment="Top"/>
             <Label Name="lblTermin" Content="" HorizontalAlignment="Left" Margin="142,185,0,0" VerticalAlignment="Top"/>
         </Grid>

@@ -14,6 +14,21 @@ namespace Termin_Client.Data
 
     public partial class Termine
     {
+        //lei orsch
+        private DateTime dateTime;
+        private string text1;
+        private string text2;
+        private string v;
+
+        public Termine(DateTime dateTime, string text1, string text2, string v)
+        {
+            this.dateTime = dateTime;
+            this.text1 = text1;
+            this.text2 = text2;
+            this.v = v;
+        }
+        //bis do
+
         [JsonProperty("id")]
         public long Id { get; set; }
 
@@ -31,6 +46,16 @@ namespace Termin_Client.Data
 
         [JsonProperty("usersParticipating")]
         public List<UsersParticipating> UsersParticipating { get; set; }
+
+        //public Termine(DateTime d, string ort, string info, string beschreibung)
+        //{
+        //    this.Date.Day = d.Day;
+        //    this.Date.Month = d.Month;
+        //    this.Date.Year = d.Year;
+        //    this.Location = ort;
+        //    this.Theme = info;
+        //    this.Description = beschreibung;
+        //}
     }
 
     public partial class Date

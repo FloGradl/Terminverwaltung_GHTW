@@ -24,7 +24,7 @@ namespace Termin_Client.GUI
         public Startseite()
         {
             InitializeComponent();
-            Karte.Navigate("https://www.google.at/maps/@47.4353345,13.6432712,8z/data=!4m2!11m1!3e4c");
+            //Karte.Navigate("https://www.google.at/maps/@47.4353345,13.6432712,8z/data=!4m2!11m1!3e4c");
             lblWillkommen.Content += db.getUsername();
             lblTermin.Content = db.getCurrentAppointment();
         }

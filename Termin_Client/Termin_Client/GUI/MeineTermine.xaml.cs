@@ -24,6 +24,7 @@ namespace Termin_Client.GUI
         public MeineTermine()
         {
             InitializeComponent();
+            db.getAllTermine();
             DataContext = db;
         }
 

@@ -29,7 +29,7 @@ namespace Termin_Client.GUI
         {
             Database db = Database.newInstance();
             DateTime? date = datepickerP.SelectedDate;
-  //Termin adden mit push!          db.addTermin(new Termine(Convert.ToDateTime(date.Value.ToShortDateString()), txtboxOrt.Text, txtboxInfo.Text, "--"));
+            db.addTermin(new Termine(Convert.ToDateTime(date.Value.ToShortDateString()), txtboxOrt.Text, txtboxInfo.Text, "--"));
         }
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Controls;
 using System.Web.Script;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Termin_Client.Data
 {
@@ -38,6 +40,15 @@ namespace Termin_Client.Data
         private string urlWebService = "http://10.0.0.35:8080/Terminverwaltung_Server/webresources/";     //schule: 192.168.195.61  daheim: 10.0.0.19
         private static readonly HttpClient client = new HttpClient();
         // GETs results of the webservice
+
+        private void POSTToWebserviceTermin(Termine t)
+        {
+            var myContent = JsonConvert.SerializeObject(t);
+            var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var result = client.PostAsync("", byteContent).Result;
+        }
 
         private string GETFromWebserver(string myPath)
         {
@@ -113,6 +124,7 @@ namespace Termin_Client.Data
         public void addTermin(Termine t)
         {
             _TerminList.Add(t);
+            this.POSTToWebserviceTermin(t);
         }
 
         public void addCar(Car c)
