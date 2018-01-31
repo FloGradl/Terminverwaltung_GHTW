@@ -14,6 +14,7 @@ using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.IO;
 
 namespace Termin_Client.Data
 {
@@ -21,7 +22,7 @@ namespace Termin_Client.Data
     {
         //Oracle wird durch Webservice ersetzt
         //externe ip 212.152.179.117
-        string cs = "Provider=OraOLEDB.Oracle;Data Source=212.152.179.117/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
+        string cs = "Provider=OraOLEDB.Oracle;Data Source=192.168.128.152/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
         OleDbCommand cmd = null;
         //Oracle
 
@@ -37,17 +38,32 @@ namespace Termin_Client.Data
         public ObservableCollection<Worker> _GroupList = new ObservableCollection<Worker>();
         public ObservableCollection<Worker> GroupList { get { return _GroupList; } }
 
-        private string urlWebService = "http://10.0.0.35:8080/Terminverwaltung_Server/webresources/";     //schule: 192.168.195.61  daheim: 10.0.0.19
+        private string urlWebService = "http://192.168.192.83:8080/Terminverwaltung_Server/webresources/";     //schule: 192.168.192.83  daheim: 10.0.0.35
         private static readonly HttpClient client = new HttpClient();
         // GETs results of the webservice
 
         private void POSTToWebserviceTermin(Termine t)
         {
-            var myContent = JsonConvert.SerializeObject(t);
-            var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
-            var byteContent = new ByteArrayContent(buffer);
-            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var result = client.PostAsync("", byteContent).Result;
+            string response;
+            var json = new JavaScriptSerializer().Serialize(t);
+            Encoding encoding = new UTF8Encoding();
+            try
+            {
+                HttpWebRequest hwr = (HttpWebRequest)WebRequest.Create(new Uri(urlWebService + "Termin"));
+                hwr.ContentType = "application/json";
+                hwr.Method = "POST";
+                using(var streamWriter = new StreamWriter(hwr.GetRequestStream()))
+                {
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+                HttpWebResponse hwres = (HttpWebResponse)hwr.GetResponse();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error: " + ex.Message);
+            }
         }
 
         private string GETFromWebserver(string myPath)
@@ -144,7 +160,7 @@ namespace Termin_Client.Data
 
         public String getCurrentAppointment()
         {
-            return "not developed yet";
+            return "30.1.2018 Villach: Reperatur - Test";
         }
         
         public List<Car> getFreeCars()

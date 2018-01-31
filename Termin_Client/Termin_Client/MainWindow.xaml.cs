@@ -27,7 +27,7 @@ namespace Termin_Client
         //dns: 	nicht eingetragen
         //ip extern:	212.152.179.117
         //ip intern:	192.168.128.152
-        string cs = "Provider=OraOLEDB.Oracle;Data Source=212.152.179.117/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
+        string cs = "Provider=OraOLEDB.Oracle;Data Source=192.168.128.152/ora11g;User Id=d5b07; Password=d5b;"; //212.152.179.117 - intern 192.168.128.152
         OleDbCommand cmd = null;
         public MainWindow()
         {

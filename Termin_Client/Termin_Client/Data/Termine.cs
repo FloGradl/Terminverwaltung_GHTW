@@ -15,19 +15,32 @@ namespace Termin_Client.Data
     public partial class Termine
     {
         //lei orsch
-        private DateTime dateTime;
-        private string text1;
-        private string text2;
-        private string v;
+        //private DateTime dateTime;
+        //private string text1;
+        //private string text2;
+        //private string v;
+
+        //public Termine(DateTime dateTime, string text1, string text2, string v)
+        //{
+        //    this.dateTime = dateTime;
+        //    this.text1 = text1;
+        //    this.text2 = text2;
+        //    this.v = v;
+        //}
+        //bis do
 
         public Termine(DateTime dateTime, string text1, string text2, string v)
         {
-            this.dateTime = dateTime;
-            this.text1 = text1;
-            this.text2 = text2;
-            this.v = v;
+            this.Date = toMyDate(dateTime);
+            this.Location = text1;
+            this.Theme = text2;
+            this.Description = v;
         }
-        //bis do
+
+        private Date toMyDate(DateTime dateTime)
+        {
+            return new Date(dateTime.Day, dateTime.Month, dateTime.Year);
+        }
 
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -72,6 +85,12 @@ namespace Termin_Client.Data
         public override string ToString()
         {
             return Day + "." + Month + "." + Year;
+        }
+        public Date(long d, long m, long y)
+        {
+            this.Day = d;
+            this.Month = m;
+            this.Year = y;
         }
     }
 
